@@ -2,10 +2,10 @@
 {
 	class Product
     {    
-		public string Sku { get; set; }
+	public string Sku { get; set; }
         public string Name { get; set; }
-		public int Stock { get; set; }
-		public double Price {get; set;}
+	public int Stock { get; set; }
+	public double Price {get; set;}
     }
 	
 	//primitive data type
@@ -45,9 +45,6 @@
 
 			Console.Write("SKU Product : ");
 			string sku = Console.ReadLine();
-			
-			//singular sendiri
-			//plural kelompok
 			
 			if (listProduct.Exists(product => product.Sku == sku))
 			{
@@ -121,20 +118,11 @@
 		public void ShowAllProducts()
 		{
 			Console.WriteLine("SKU\tName\tStock\tPrice");
-            //Console.WriteLine("\nSKU\tname\tstock\tprice");
 
 			foreach (var produk in listProduct)
 			{
 				Console.WriteLine("{0}\t{1}\t{2}\t{3}",produk.Sku, produk.Name, produk.Stock, produk.Price);
-                //Console.WriteLine(" | " + produk.Sku + " | " + produk.name + " | " + produk.stock + " | " + produk.price);
 			}
-			
-			//Console.WriteLine("\nDaftar listCart:");
-
-			//foreach (var produk in listCart)
-			//{
-				//Console.WriteLine("- " + produk.name + "- " + produk.Sku + "- " + produk.stock + "- " + produk.price);
-			//}
 		}
 		
 		public void ShowAllCart()
@@ -167,7 +155,8 @@
             
 		}
 
-        public void EditProduct(){
+        public void EditProduct()
+	{
             Console.WriteLine("Edit Data Produk");
             Console.Write("Sku Produk: ");
 			
@@ -201,53 +190,53 @@
 
         while (menu != 9)
         {
-            Console.WriteLine("Welcome to the Dotnet Store:");
-            Console.WriteLine("1. Add Product");
-            Console.WriteLine("2. Edit Product");
-            Console.WriteLine("3. Show All Products");
-            Console.WriteLine("4. Delete produk");
-            Console.WriteLine("5. Add Product to Cart");
-			Console.WriteLine("6. Delete Product From Cart");
-			Console.WriteLine("7. Show Cart");
-			Console.WriteLine("8. Checkout");
-			Console.WriteLine("9. Exit");
-            Console.Write("Pilih menu: ");
+           	Console.WriteLine("Welcome to the Dotnet Store:");
+           	Console.WriteLine("1. Add Product");
+           	Console.WriteLine("2. Edit Product");
+            	Console.WriteLine("3. Show All Products");
+            	Console.WriteLine("4. Delete produk");
+            	Console.WriteLine("5. Add Product to Cart");
+		Console.WriteLine("6. Delete Product From Cart");
+		Console.WriteLine("7. Show Cart");
+		Console.WriteLine("8. Checkout");
+		Console.WriteLine("9. Exit");
+            	Console.Write("Pilih menu: ");
 		menu = Convert.ToInt32(Console.ReadLine());
 
             switch (menu)
             {
                 case 1:
-                    toko.AddData();
-                    break;
+                    	toko.AddData();
+                    	break;
                 case 2:
-					toko.ShowAllProducts();
-					toko.EditProduct();
-                    break;
+			toko.ShowAllProducts();
+			toko.EditProduct();
+                    	break;
                 case 3:
-					toko.ShowAllProducts();
-                    break;
+			toko.ShowAllProducts();
+                    	break;
                 case 4:
-					toko.ShowAllProducts();
-					toko.DeleteProduct();
-                    break;
-				case 5:
-					toko.AddToCart();
-                    break;
+			toko.ShowAllProducts();
+			toko.DeleteProduct();
+                    	break;
+		case 5:
+			toko.AddToCart();
+                    	break;
                 case 6:
-                    toko.DeleteCart();
+                    	toko.DeleteCart();
                 	break;
-				case 7:
-                    toko.ShowAllCart();
+		case 7:
+                    	toko.ShowAllCart();
                 	break;
-				case 8:
-                    toko.Checkout();
+		case 8:
+                    	toko.Checkout();
                 	break;
-				case 9:
-                    Console.WriteLine("Thank you for using our program.");
+		case 9:
+                    	Console.WriteLine("Thank you for using our program.");
                 	break;
                 default:
-                    Console.WriteLine("Menu are not available.");
-                    break;
+                   	Console.WriteLine("Menu are not available.");
+                    	break;
             }
         }
 	}
